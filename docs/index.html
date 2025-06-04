@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <link rel="canonical" href="https://https://demo.themesberg.com/landwind/" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mana digitālā pieredze</title>
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="./output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+
+</head>
+<body class="font-noto-sans dark:bg-primary-900">
+    <header class="fixed w-full z-1">
+        <nav class="bg-primary-400 dark:bg-primary-800">
+            <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto">
+                    <div class="z-10 flex items-center shadow-md shadow-primary-900/20 lg:shadow-transparent py-2.5 px-4 justify-between gap-4 w-full lg:max-w-max lg:order-2">
+                        <div class="flex items-center justify-start gap-2">
+                            <a href="#" class="lg:order-2">
+                                <img src="../images/logo.svg" class="h-7 mr-3 sm:h-9" alt="Landwind Logo" />
+                            </a>
+                            <button id="theme-toggle" type="button" class="text-primary-50 hover:bg-primary-300 dark:hover:bg-primary-700 rounded-lg p-2.5 lg:order-1">
+                                <svg id="theme-toggle-dark-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                                <svg id="theme-toggle-light-icon" class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </div>
+                        <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2.5 ml-1 text-sm text-primary-50 rounded-lg lg:hidden hover:bg-primary-300 dark:hover:bg-primary-700" aria-controls="mobile-menu-2" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                            <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </button>
+                    </div>
+                    <div class="z-8 bg-primary-100 lg:bg-transparent lg:shadow-transparent items-center shadow-lg justify-between hidden w-full lg:px-4 lg:flex lg:w-auto lg:order-1 dark:bg-primary-700" id="mobile-menu-2">
+                        <ul class="text-primary-800 lg:text-primary-50 dark:text-primary-50 flex flex-col font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                            <li>
+                                <a href="#ofiss" class="block py-2 pl-3 pr-4 border-b border-primary-200 hover:bg-primary-300 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-900 lg:p-0 lg:dark:hover:text-primary-200 dark:hover:bg-primary-600 dark:hover:text-white lg:dark:hover:bg-transparent">Ofiss</a>
+                            </li>
+                            <li>
+                                <a href="#onedrive" class="block py-2 pl-3 pr-4 border-b border-primary-200 hover:bg-primary-300 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-900 lg:p-0 lg:dark:hover:text-primary-200 dark:hover:bg-primary-600 dark:hover:text-white lg:dark:hover:bg-transparent">OneDrive</a>
+                            </li>
+                            <li>
+                                <a href="#moodle" class="block py-2 pl-3 pr-4 border-b border-primary-200 hover:bg-primary-300 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-900 lg:p-0 lg:dark:hover:text-primary-200 dark:hover:bg-primary-600 dark:hover:text-white lg:dark:hover:bg-transparent">Moodle</a>
+                            </li>
+                            <li>
+                                <a href="#os" class="block py-2 pl-3 pr-4 border-b border-primary-200 hover:bg-primary-300 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-900 lg:p-0 lg:dark:hover:text-primary-200 dark:hover:bg-primary-600 dark:hover:text-white lg:dark:hover:bg-transparent">Operētājsistēmas</a>
+                            </li>
+                            <li>
+                                <a href="#piv" class="block py-2 pl-3 pr-4 hover:bg-primary-300 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-900 lg:p-0 lg:dark:hover:text-primary-200 dark:hover:bg-primary-600 dark:hover:text-white lg:dark:hover:bg-transparent">Izstrāde</a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero-section" class="relative mb-20">
+        <div class="mask-alpha mask-b-from-black mask-b-from-80% mask-b-to-transparent bg-[url(../images/hero-vertical.jpeg)] sm:bg-[url(../images/hero.jpeg)] w-full bg-cover aspect-[9/16] sm:aspect-[16/9] max-h-[90vh]"></div>
+        <div class="absolute inset-x-0 -bottom-20 h-[20vh] bg-gradient-to-t from-white via-white/70 to-transparent pointer-events-none dark:from-primary-900 dark:via-primary-900/70"></div>
+        <div class="absolute inset-x-0 -bottom-20 flex justify-center pb-6 sm:pb-8">
+            <button id="scroll-arrow-button" class="p-2 sm:p-3 rounded-full text-primary-900 dark:text-primary-50 hover:bg-primary-800/20 dark:hover:bg-primary-700/30 transition-all duration-200 ease-in-out">
+                <svg id="scroll-arrow-svg" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 origin-center transition-transform duration-300 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3.0">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+        </div>
+    </section>
+    
+    <!-- Start block -->
+    <section class="" id="main-content-section">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
+            <!-- Row -->
+            <div class="gap-4 flex flex-col" id="ofiss">
+                <h2 class="text-center lg:self-start mb-4 text-3xl font-extrabold tracking-tight text-black dark:text-gray-50">Microsoft Office</h2>
+                <div class="items-center gap-8 flex flex-col lg:items-start lg:flex-row xl:gap-16">
+                    <img class="flex-none object-cover aspect-3/2 w-lg lg:mb-0" src="../images/office.jpeg" alt="dashboard feature image">
+                    <p class="self-start text-black sm:text-lg dark:text-gray-50 font-light lg:text-xl">
+                        Tieši viena no pirmajām saskarsmēm ar LU digitālo vidi man bija caur <i>Microsoft Office</i> programmatūru. Izmantojot LU studenta e-pastu,
+                        ir iespējams iegūt piekļuvi pie visām <i>Microsoft Office</i> programmām. Visbiežāk tiek izmantota <i>Ms Teams</i>, lai pieslēgtos attalinātajām lekcijām un dalītos ar failiem.
+                        Man ļoti patīk veidot prezentācijas ar <i>PowerPoint</i>, jo programma noformatē slaidus prezentācijai tavā vietā, balstoties uz slaida saturu, kas ir ļoti ērti.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Row -->
+            <div class="gap-4 flex flex-col" id="onedrive">
+                <h2 class="text-center lg:self-start mb-4 text-3xl font-extrabold tracking-tight text-black dark:text-gray-50">Microsoft OneDrive</h2>
+                <div class="items-center gap-8 flex flex-col lg:items-start lg:flex-row xl:gap-16">
+                    <img class="flex-none object-cover aspect-3/2 w-lg lg:mb-0" src="../images/onedrive.jpeg" alt="dashboard feature image">
+                    <p class="self-start text-black sm:text-lg dark:text-gray-50 font-light lg:text-xl">
+                        Turpinot par failu dalīšanos - daudzi studenti palaiž garām to, ka ar studenta e-pastu ir pieejams 1 TB ar diska vietu <i>Microsoft OneDrive</i>.
+                        Šo es izmantoju, lai saglabātu visus savus universitātes darbus - tie ir pieejami no jebkuras iekārtas un neaizņem vietu uz mana personīgā datora.
+                        Manuprāt, ir ļoti svarīgi, ka failiem ir izveidota rezerveres kopija. Labums failu glabāšanai mākoņa glabātuvē ir tāds, ka to ir vienkāršāk izmantot un to nevar pazaudēt, salīdzinot ar cieto disku.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Row -->
+            <div class="gap-4 flex flex-col" id="moodle">
+                <h2 class="text-center lg:self-start mb-4 text-3xl font-extrabold tracking-tight text-black dark:text-gray-50">Moodle</h2>
+                <div class="items-center gap-8 flex flex-col lg:items-start lg:flex-row xl:gap-16">
+                    <img class="flex-none object-cover aspect-3/2 w-lg lg:mb-0" src="../images/moodle.jpeg" alt="dashboard feature image">
+                    <p class="self-start text-black sm:text-lg dark:text-gray-50 font-light lg:text-xl">
+                        Noteikti visbiežāk izmantotā programma studentu lokā ir <i>Moodle</i>, kas ir pieejama caur <a href="https://estudijas.lu.lv/" target="_blank" class="text-primary-600 underline">estudijas.lu.lv</a>.
+                        <i>Moodle</i> ir mācību platforma, ko izmanto ne tikai Latvijas Universitāte. Šeit ir pieejama visa svarīgākā informācija par mācību kursiem. Ir arī opcija sazināties
+                        ar pasniedzējiem, saglabāt failus, rakstīt kontroldarbus, atzīmēt apmeklējumu un nodot mājasdarbus. Ļoti forši, ka viss pieejams vienā vietā.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Row -->
+            <div class="gap-4 flex flex-col" id="os">
+                <h2 class="text-center lg:self-start mb-4 text-3xl font-extrabold tracking-tight text-black dark:text-gray-50">Operētājsistēmas</h2>
+                <div class="items-center gap-8 flex flex-col lg:items-start lg:flex-row xl:gap-16">
+                    <img class="flex-none object-cover aspect-3/2 w-lg lg:mb-0" src="../images/os.jpeg" alt="dashboard feature image">
+                    <p class="self-start text-black sm:text-lg dark:text-gray-50 font-light lg:text-xl">
+                        Datorzinātņu studiju gaitā arī ieguvu iespēju izmēģināt, kā darboties ar dažādām operētājsistēmām. Līdz studiju uzsākšanai es pazinu tikai <i>Windows</i>,
+                        taču vairāki studiju kursi man piespieda apieties ar <i>Linux</i> operētājsistēmām. Interesanti, ka <i>MacOS</i> ir izveidota, tāpat kā <i>Linux</i>, balstoties uz <i>Unix</i>.
+                        Tagad krietni labāk māku darboties ar termināli, kas noder visās izstrādes vidēs.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Row -->
+            <div class="gap-4 flex flex-col" id="piv">
+                <h2 class="text-center lg:self-start mb-4 text-3xl font-extrabold tracking-tight text-black dark:text-gray-50">Programmatūras izstrādes vides</h2>
+                <div class="items-center gap-8 flex flex-col lg:items-start lg:flex-row xl:gap-16">
+                    <img class="flex-none object-cover aspect-3/2 w-lg lg:mb-0" src="../images/programmesana.jpeg" alt="dashboard feature image">
+                    <p class="self-start text-black sm:text-lg dark:text-gray-50 font-light lg:text-xl">
+                        Līdz šim universitāte esmu sastapusies ar daudz dažādām programmēšanas valodām, kā C++, Python, Java, C un citas. Esmu ieguvusi iespēju izmēģināt darboties dažādās vidēs, kā
+                        <i>Visual Studio Code</i>, <i>Code::Blocks</i>, dažādas <i>JetBrains</i> programmas. Man personīgi ļoti patīk strādāt ar <i>JetBrains</i>, jo lietotāja saskarne ir ļoti intuitīva, kā arī ir pieejama studentu versija. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-primary-500 dark:bg-primary-800">
+        <div class="max-w-screen p-4 py-6 m x-auto lg:py-10 md:p-8 lg:p-10 ">
+            <div class="w-full justify-between items-center gap-4 flex flex-col md:flex-row">
+                <a href="#" class="">
+                    <img src="../images/logo.svg" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />    
+                </a>
+                <span class="block text-center text-primary-50"> 2025 - Dārta Gobleja</span>
+                <ul class="flex justify-center space-x-5">
+                    <li>
+                        <a href="#" class="text-primary-50 hover:text-primary-900 dark:hover:text-primary-200 ">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-primary-50 hover:text-primary-900 dark:hover:text-primary-200 ">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script>
+        var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        // Change the icons inside the button based on previous settings
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        var themeToggleBtn = document.getElementById('theme-toggle');
+
+        themeToggleBtn.addEventListener('click', function() {
+
+            // toggle icons inside button
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            // if set via local storage previously
+            if (localStorage.getItem('color-theme')) {
+                if (localStorage.getItem('color-theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                }
+
+            // if NOT set via local storage previously
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('color-theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('color-theme', 'dark');
+                }
+            }
+            
+        });
+
+        // Hero scroll functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const heroSection = document.getElementById('hero-section');
+            const scrollArrowButton = document.getElementById('scroll-arrow-button');
+            const scrollArrowSvg = document.getElementById('scroll-arrow-svg');
+            // const mainContentSection = document.getElementById('main-content-section'); // Not directly used for scroll target anymore
+            const siteHeader = document.querySelector('header.fixed');
+
+            if (!heroSection || !scrollArrowButton || !scrollArrowSvg || !siteHeader) {
+                console.error('Hero scroll elements (hero, button, svg, or fixed header) not found!');
+                return;
+            }
+
+            let headerHeight = 0;
+            // Ensure header height is calculated after it's rendered and stable
+            // Using a small timeout or resize observer might be more robust if header height changes dynamically
+            // For now, assume it's stable on DOMContentLoaded or shortly after.
+            function calculateHeaderHeight() {
+                headerHeight = siteHeader.offsetHeight;
+            }
+            calculateHeaderHeight(); // Initial calculation
+            window.addEventListener('resize', calculateHeaderHeight); // Recalculate on resize
+
+
+            function updateArrowState() {
+                if (!heroSection) return; // Guard clause
+                const heroRect = heroSection.getBoundingClientRect();
+                const heroFullHeight = heroSection.offsetHeight;
+                
+                // Consider hero halfway scrolled off if its top is above -height/2
+                const isHeroMostlyScrolledOff = heroRect.top < -(heroFullHeight / 2);
+                                const isCurrentlyRotated = scrollArrowSvg.classList.contains('rotate-180');
+
+
+                if (isHeroMostlyScrolledOff) {
+                    if (!isCurrentlyRotated) { // Only add if not already rotated
+                        scrollArrowSvg.classList.add('rotate-180');
+                    }
+                } else {
+                    if (isCurrentlyRotated) { // Only remove if currently rotated
+                        scrollArrowSvg.classList.remove('rotate-180');
+                    }
+                }
+            }
+
+            scrollArrowButton.addEventListener('click', () => {
+                const isArrowPointingUp = scrollArrowSvg.classList.contains('rotate-180');
+
+                if (isArrowPointingUp) {
+                    // Arrow is up: hero is considered hidden or button is at top.
+                    // Scroll to show hero fully, with its top just below the fixed header.
+                    const heroTopOffset = heroSection.offsetTop;
+                    const targetScrollY = heroTopOffset - headerHeight;
+                    
+                    window.scrollTo({ top: Math.max(0, targetScrollY), behavior: 'smooth' }); // Ensure not scrolling to negative
+                    scrollArrowSvg.classList.remove('rotate-180'); // Change direction immediately
+                } else {
+                    // Arrow is down: hero is considered visible.
+                    // Scroll to position the scroll-arrow-button at the top of the viewport, below the fixed header.
+                    const buttonRect = scrollArrowButton.getBoundingClientRect();
+                    // current scrollY + button's top relative to viewport - desired offset from top (headerHeight)
+                    const targetScrollY = window.scrollY + buttonRect.top - headerHeight;
+                    
+                    window.scrollTo({ top: Math.max(0, targetScrollY), behavior: 'smooth' });
+                    scrollArrowSvg.classList.add('rotate-180'); // Change direction immediately
+                }
+            });
+
+            window.addEventListener('scroll', updateArrowState, { passive: true });
+            // Initial state can also be set after a very short delay to ensure layout is stable
+            setTimeout(updateArrowState, 100); // Initial check after potential layout shifts
+        });
+    </script>
+</body>
+</html>

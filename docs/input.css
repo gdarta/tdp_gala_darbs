@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import "flowbite/src/themes/default";
+
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-primary-50: oklch(94.53% 0.036 341.43);
+    --color-primary-100: oklch(89.58% 0.066 343.24);
+    --color-primary-200: oklch(80.75% 0.109 336.01);
+    --color-primary-300: oklch(73.15% 0.136 337.16);
+    --color-primary-400: oklch(64.06% 0.172 338.09);
+    --color-primary-500: oklch(58.12% 0.156 338.20);
+    --color-primary-600: oklch(48.85% 0.128 337.80);
+    --color-primary-700: oklch(37.81% 0.095 338.25);
+    --color-primary-800: oklch(28.89% 0.069 337.57);
+    --color-primary-900: oklch(21.59% 0.039 343.99);
+
+    --color-gray-600: oklch(0.3546 0 0);
+
+    --font-noto-sans: Noto Sans Display, sans-serif;
+}
