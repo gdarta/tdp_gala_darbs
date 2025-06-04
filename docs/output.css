@@ -2069,8 +2069,8 @@
     --tw-gradient-position: to top in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
-  .bg-\[url\(\.\.\/images\/hero-vertical\.jpeg\)\] {
-    background-image: url(../images/hero-vertical.jpeg);
+  .bg-\[url\(images\/hero-vertical\.jpeg\)\] {
+    background-image: url(images/hero-vertical.jpeg);
   }
   .from-white {
     --tw-gradient-from: var(--color-white);
@@ -2651,9 +2651,9 @@
       height: calc(var(--spacing) * 9);
     }
   }
-  .sm\:bg-\[url\(\.\.\/images\/hero\.jpeg\)\] {
+  .sm\:bg-\[url\(images\/hero\.jpeg\)\] {
     @media (width >= 40rem) {
-      background-image: url(../images/hero.jpeg);
+      background-image: url(images/hero.jpeg);
     }
   }
   .sm\:p-3 {
